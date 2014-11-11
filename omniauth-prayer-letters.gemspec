@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = OmniAuth::PrayerLetters::VERSION
 
-  gem.add_runtime_dependency 'omniauth-oauth'
+  gem.add_runtime_dependency 'omniauth-oauth2'
   gem.add_runtime_dependency 'multi_json'
 
   gem.add_development_dependency 'rspec'

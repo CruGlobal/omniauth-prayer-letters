@@ -1,21 +1,24 @@
-require 'omniauth-oauth'
+require 'omniauth-oauth2'
 require 'multi_json'
 
 module OmniAuth
   module Strategies
-    class PrayerLetters < OmniAuth::Strategies::OAuth
+    class PrayerLetters < OmniAuth::Strategies::OAuth2
+      args [:client_id]
+
       option :name, 'prayer_letters'
 
       option :client_options, {
-        :site               => 'https://www.prayerletters.com',
-        :authorize_path     => '/my/oauth1/authorize',
-        :access_token_path  => '/api/oauth1/token',
-        :request_token_path => '/api/oauth1/initiate',
-        :http_method        => 'post',
-        :scheme             => :query_string
+        site: 'https://www.prayerletters.com',
+        authorize_url: '/my/oauth/authorize',
+        token_url: '/oauth/token',
       }
 
-      option :permissions, 'contacts.read,contacts.write'
+      option :authorize_options, {
+        response_type: 'code',
+        scope: 'contacts.read,contacts.write',
+        state: ''
+      }
 
       uid { raw_info['id'] }
 
@@ -36,7 +39,7 @@ module OmniAuth
 
       def request_phase
         options.request_params ||= {}
-        options.request_params[:permissions] = options.permissions
+        #options.request_params[:permissions] = options.permissions
         super
       end
 

@@ -1,6 +1,6 @@
 # Omniauth::PrayerLetters
 
-prayerletters.com strategy for OmniAuth 1.0
+prayerletters.com strategy for OmniAuth 2.0
 
 ## Installation
 
@@ -22,7 +22,7 @@ Here's a quick example, adding the middleware to a Rails app in `config/initiali
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :prayer-letters, ENV['PRAYER_LETTERS_KEY'], ENV['PRAYER_LETTERS_SECRET']
+  provider :prayer-letters, ENV['PRAYER_LETTERS_CLIENT_ID']
 end
 ```
 
