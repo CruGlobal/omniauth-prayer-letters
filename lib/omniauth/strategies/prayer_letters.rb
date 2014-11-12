@@ -14,8 +14,7 @@ module OmniAuth
 
       option :authorize_options, {
         response_type: 'code',
-        scope: 'contacts.read,contacts.write',
-        state: ''
+        scope: 'contacts.read,contacts.write'
       }
 
       uid { raw_info['id'] }
