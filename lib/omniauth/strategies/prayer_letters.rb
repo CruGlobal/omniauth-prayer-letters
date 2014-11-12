@@ -9,12 +9,7 @@ module OmniAuth
       option :client_options, {
         site: 'https://www.prayerletters.com',
         authorize_url: '/my/oauth/authorize',
-        token_url: '/oauth/token',
-      }
-
-      option :authorize_options, {
-        response_type: 'code',
-        scope: 'contacts.read,contacts.write'
+        token_url: '/oauth/token'
       }
 
       uid { raw_info['id'] }
