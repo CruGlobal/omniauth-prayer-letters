@@ -3,7 +3,7 @@ require 'omniauth-prayer-letters'
 
 describe OmniAuth::Strategies::PrayerLetters do
   let(:app) { lambda { [200, {}, ["Hello."]] } }
-  let(:subject) { OmniAuth::Strategies::PrayerLetters.new(app, 'test_client_id', @options) }
+  let(:subject) { OmniAuth::Strategies::PrayerLetters.new(app, 'test_client_id', 'test_client_secret', @options) }
 
   before do
     OmniAuth.config.test_mode = true

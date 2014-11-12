@@ -4,8 +4,6 @@ require 'multi_json'
 module OmniAuth
   module Strategies
     class PrayerLetters < OmniAuth::Strategies::OAuth2
-      args [:client_id]
-
       option :name, 'prayer_letters'
 
       option :client_options, {
