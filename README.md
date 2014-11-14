@@ -22,7 +22,7 @@ Here's a quick example, adding the middleware to a Rails app in `config/initiali
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :prayer-letters, ENV['PRAYER_LETTERS_CLIENT_ID']
+  provider :prayer-letters, ENV['PRAYER_LETTERS_CLIENT_ID'], ENV['PRAYER_LETTERS_CLIENT_SECRET']
 end
 ```
 
