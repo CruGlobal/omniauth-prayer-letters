@@ -31,7 +31,6 @@ module OmniAuth
 
       def request_phase
         options.request_params ||= {}
-        #options.request_params[:permissions] = options.permissions
         super
       end
 
