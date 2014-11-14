@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Prayer Letters strategy for omniauth}
   gem.summary       = %q{Prayer Letters strategy for omniauth}
   gem.homepage      = 'https://github.com/CruGlobal/omniauth-prayer-letters'
+  gem.license = 'MIT'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
