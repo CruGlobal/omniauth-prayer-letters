@@ -1,7 +1,17 @@
 require 'spec_helper'
-require 'omniauth-prayer_letters'
+require 'omniauth-prayer-letters'
 
 describe OmniAuth::Strategies::PrayerLetters do
-  it_should_behave_like 'an oauth1.0a strategy'
-end
+  let(:app) { lambda { [200, {}, ["Hello."]] } }
+  let(:subject) { OmniAuth::Strategies::PrayerLetters.new(app, 'test_client_id', 'test_client_secret', @options) }
 
+  before do
+    OmniAuth.config.test_mode = true
+  end
+
+  after do
+    OmniAuth.config.test_mode = false
+  end
+
+  it_should_behave_like 'an oauth2 strategy'
+end

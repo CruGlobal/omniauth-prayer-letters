@@ -1,9 +1,7 @@
-# 0.0.2 (2012-06-21)
+# 0.0.3 (2014-11-11)
 
-## Bugs
+- Updated to OAuth 2.0
 
-* MySpace needs query string rather than headr strategy (@johnf)
+# 0.0.2
 
-# 0.0.1
-
-- Initial Release
+- Initial Release for PrayerLetters OAuth 1.0
